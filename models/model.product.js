@@ -21,10 +21,10 @@ var ProductSchema = new Schema({
             type: String
         },
         price: {
-            type: String
+            type: Number
         },
         stock: {
-            type: String
+            type: Number
         },
         seller: {
             type: String
@@ -42,7 +42,7 @@ var ProductSchema = new Schema({
         }
     }],
     review: {
-        type: String
+        type: Number
     }
 });
 module.exports = mongoose.model('Product', ProductSchema);

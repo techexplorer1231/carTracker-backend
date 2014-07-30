@@ -9,8 +9,8 @@ describe('admin', function() {
                 "brand": "Centizu",
                 "detail": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
                 "offer": "Praesent blandit.",
-                "price": "5158",
-                "stock": "3",
+                "price": 5158,
+                "stock": 3,
                 "seller": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
                 "title": "Latz"
             },
@@ -33,13 +33,13 @@ describe('admin', function() {
 			expect(res.body[0].description[0].brand).toEqual('Centizu')
 			expect(res.body[0].description[0].detail).toEqual('Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.')
 			expect(res.body[0].description[0].offer).toEqual('Praesent blandit.')
-			expect(res.body[0].description[0].price).toEqual('5158')
-			expect(res.body[0].description[0].stock).toEqual('3')
+			expect(res.body[0].description[0].price).toEqual(5158)
+			expect(res.body[0].description[0].stock).toEqual(3)
 			expect(res.body[0].description[0].seller).toEqual('Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.')
 			expect(res.body[0].description[0].title).toEqual('Latz')
 			expect(res.body[0].image[0].main).toEqual('http://erwin.aicsi.com/demo/mimity/images/product-9.jpg')
 			expect(res.body[0].image[0].thumbnail).toEqual('http://erwin.aicsi.com/demo/mimity/images/product-4.jpg')
-			expect(res.body[0].review).toEqual('3')
+			expect(res.body[0].review).toEqual(3)
             expect(res.body[0]._id).not.toBeUndefined()
             done();
         })
@@ -52,13 +52,13 @@ describe('admin', function() {
 			expect(res.body.description[0].brand).toEqual('Centizu')
 			expect(res.body.description[0].detail).toEqual('Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.')
 			expect(res.body.description[0].offer).toEqual('Praesent blandit.')
-			expect(res.body.description[0].price).toEqual('5158')
-			expect(res.body.description[0].stock).toEqual('3')
+			expect(res.body.description[0].price).toEqual(5158)
+			expect(res.body.description[0].stock).toEqual(3)
 			expect(res.body.description[0].seller).toEqual('Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.')
 			expect(res.body.description[0].title).toEqual('Latz')
 			expect(res.body.image[0].main).toEqual('http://erwin.aicsi.com/demo/mimity/images/product-9.jpg')
 			expect(res.body.image[0].thumbnail).toEqual('http://erwin.aicsi.com/demo/mimity/images/product-4.jpg')
-			expect(res.body.review).toEqual('3')
+			expect(res.body.review).toEqual(3)
             expect(res.body._id).not.toBeUndefined()
             done();
         })
@@ -81,13 +81,13 @@ describe('admin', function() {
 			expect(res.body.description[0].brand).toEqual('Centizu')
 			expect(res.body.description[0].detail).toEqual('Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.')
 			expect(res.body.description[0].offer).toEqual('Praesent blandit.')
-			expect(res.body.description[0].price).toEqual('5158')
-			expect(res.body.description[0].stock).toEqual('3')
+			expect(res.body.description[0].price).toEqual(5158)
+			expect(res.body.description[0].stock).toEqual(3)
 			expect(res.body.description[0].seller).toEqual('Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.')
 			expect(res.body.description[0].title).toEqual('Latz')
 			expect(res.body.image[0].main).toEqual('http://erwin.aicsi.com/demo/mimity/images/product-9.jpg')
 			expect(res.body.image[0].thumbnail).toEqual('http://erwin.aicsi.com/demo/mimity/images/product-4.jpg')
-			expect(res.body.review).toEqual('3')
+			expect(res.body.review).toEqual(3)
             expect(res.body.category).not.toBeUndefined()
             done();
         })
