@@ -3,10 +3,15 @@
 var productModel = require('../models/model.product')
 // create a user (accessed at POST http://localhost:3000/products
 exports.insert = function(req, res) {
-    var user = new productModel(); // create a new instance of the Product model
-    user.name = req.body.name; // set the products name (comes from the request)
-	user.description = req.body.description ;
-    user.save(function(err, data) {
+    var product = new productModel(); // create a new instance of the Product model
+	
+    product.category = req.body.category;
+	product.created = req.body.created;
+	product.description = req.body.description;
+	product.image = req.body.image;
+	product.review = req.body.review;
+	
+    product.save(function(err, data) {
         if(err) res.send(err);
         res.json(data);
     });
@@ -29,7 +34,7 @@ exports.read = function(req, res) {
 exports.update = function(req, res) {
     productModel.findById(req.params.product_id, function(err, user) {
         if(err) res.send(err);
-        user.name = req.body.name;
+        user.category = req.body.category;
         user.save(function(err) {
             if(err) res.send(err);
             res.json({
