@@ -1,5 +1,7 @@
+'use strict'
+
 var userModel = require('../models/model.user')
-// create a user (accessed at POST http://localhost:3000/users
+// create a user (accessed at POST http://localhost:3001/users
 exports.insert = function(req, res) {
     var user = new userModel(); // create a new instance of the Product model
     user.name = req.body.name; // set the products name (comes from the request)
@@ -8,7 +10,7 @@ exports.insert = function(req, res) {
         res.json(data);
     });
 }
-// create a user (accessed at GET http://localhost:3000/users
+// create a user (accessed at GET http://localhost:3001/users
 exports.list = function(req, res) {
     userModel.find(function(err, data) {
         if(err) res.send(err);
