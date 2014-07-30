@@ -3,8 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ProductSchema = new Schema({
     category: {
-        type: String,
-        unique: true
+        type: String
     },
     created: {
         type: Date,

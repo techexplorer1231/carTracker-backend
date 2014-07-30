@@ -15,15 +15,18 @@ router.use(function(req, res, next) {
     next();
 });
 
-// for routes like /users
+// for routes like /products
 router.route('/')
     .post(productController.insert)
     .get(productController.list)
 
-// for routes like /users/:product_id
+// for routes like /products/:product_id
 router.route('/:product_id')
     .get(productController.read)
     .put(productController.update)
     .delete(productController.delete)
+
+router.route('/randomProducts/:productsCount')
+	.get(productController.randomProducts)
 
 module.exports = router;

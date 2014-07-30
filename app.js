@@ -17,6 +17,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+
+//route binding
 app.use('/users', users);
 app.use('/products', products);
 
