@@ -79,12 +79,18 @@ describe('admin', function() {
             done();
         })
     });
-	
     // http://localhost:3001/products/randomProducts?productsCount=20
-    it("can get list specific number of products", function(done) {
-        superagent.get('http://localhost:3001/products/randomProducts/'+ 2).end(function(e, res) {
+    it("can get list 20 random products", function(done) {
+        superagent.get('http://localhost:3001/products/randomProducts/' + 20).end(function(e, res) {
             expect(res.status).toEqual(200)
-			expect(res.body.length).toEqual(2)
+            expect(res.body.length).toEqual(20)
+            done();
+        })
+    });
+    it("can get list 30 random products", function(done) {
+        superagent.get('http://localhost:3001/products/randomProducts/' + 30).end(function(e, res) {
+            expect(res.status).toEqual(200)
+            expect(res.body.length).toEqual(30)
             done();
         })
     });

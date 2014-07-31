@@ -51,11 +51,21 @@ exports.delete = function(req, res) {
 }
 //accessed at GET http://localhost:3001/products/randomProducts?productsCount=20
 exports.randomProducts = function(req, res) {
-	productModel.count().exec(function(err, count) {
-		var skip = Math.floor(Math.random() * (count - 1 + req.param('productsCount'))) + 1;
-		productModel.find().sort('stock').limit(req.param('productsCount')).skip(req.param('skip')).exec(function(err, data){
-			if(err) res.send(err);
-			res.json(data);		
-		});
-	});
+    productModel.count().exec(function(err, count) {
+        var skip = Math.floor(Math.random() * (count - 1 + req.param('productsCount'))) + 1;
+        productModel.find().sort('stock').limit(req.param('productsCount')).skip(req.param('skip')).exec(function(err, data) {
+            if(err) res.send(err);
+            res.json(data);
+        });
+    });
+}
+//accessed at GET http://localhost:3001/products/randomProductsByCategory?productsCount=20?productsCategory=Watches
+exports.randomProductsByCategory = function(req, res) {
+	productModel.find({category : req.param('productsCategory')}).count().exec(function(err, count) {
+        var skip = Math.floor(Math.random() * (count - 1 + req.param('productsCount'))) + 1;
+        productModel.find({category : req.param('productsCategory')}).sort('stock').limit(req.param('productsCount')).skip(req.param('skip')).exec(function(err, data) {
+            if(err) res.send(err);
+            res.json(req.param('productsCount') + data);
+        });
+    });
 }
