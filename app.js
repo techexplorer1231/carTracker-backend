@@ -8,8 +8,11 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
 var uri = 'mongodb://localhost/myApp';
 mongoose.connect(uri);
+
 var users = require('./routes/route.users');
 var products = require('./routes/route.products');
+var geolocation = require('./routes/route.geolocation');
+
 var app = express();
 app.use(cors());
 app.use(favicon());
@@ -21,6 +24,7 @@ app.use(cookieParser());
 //route binding
 app.use('/users', users);
 app.use('/products', products);
+app.use('/geolocation', geolocation);
 
 // 404 catch-all handler (middleware)
 app.use(function(req, res, next) {
