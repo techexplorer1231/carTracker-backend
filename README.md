@@ -1,1 +1,1 @@
-Backend
+nodemon ./bin/www

@@ -17,4 +17,6 @@ router.use(function(req, res, next) {
 router.route('/')
     .post(geolocationController.insert)
 
+
 module.exports = router;
+
